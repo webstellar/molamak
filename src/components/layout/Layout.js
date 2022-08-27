@@ -27,6 +27,7 @@ const theme = createTheme({
     secondary: {
       main: colors.indigo[900],
       sub: colors.grey[400],
+      white: colors.grey[50],
     },
   },
 })
@@ -36,7 +37,6 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       <Secondaryheader
         siteTitle={data.site.siteMetadata?.description || `Description`}
       />
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
-        <Container maxWidth="xl">{children}</Container>
+        <main>{children}</main>
         <Footer />
       </div>
     </ThemeProvider>

@@ -4,3 +4,7 @@ h2,
 h4 {
   font-family: "Poppins" !important;
 }
+
+.heroImage {
+  max-height: 600;
+}

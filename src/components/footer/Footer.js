@@ -3,24 +3,24 @@ import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MoAppBar, MoStatement, MoStatementButton } from "./Footer.styles"
 import { Typography, CssBaseline, Container, Toolbar, Box } from "@mui/material"
 import FooterNavigation from "../navigation/FooterNavigation"
+import { useTheme } from "@mui/material/styles"
+import { useMediaQuery } from "@mui/material"
 
 const Footer = () => {
   const { wpMenu } = useMenuQuery()
+  const theme = useTheme()
+  const match = useMediaQuery(theme.breakpoints.down("md"))
+  const mt = "12"
   return (
     <footer>
       <CssBaseline />
-      <MoStatement
-        position="static"
-        elevation={0}
-        color="default"
-        sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
-      >
+      <MoStatement position="static" elevation={0} color="default">
         <Container maxWidth="xl">
           <Toolbar sx={{ flexWrap: "wrap" }}>
             <Typography
               variant="h6"
               color="inherit"
-              sx={{ flexGrow: 1, fontWeight: "bold", lineHeight: "1.5rem",  }}
+              sx={{ flexGrow: 1, fontWeight: "bold", lineHeight: "1.5rem" }}
             >
               Interested in getting a free consultation by our security experts?
             </Typography>
@@ -46,7 +46,7 @@ const Footer = () => {
       >
         <Container maxWidth="xl">
           <Toolbar sx={{ flexWrap: "wrap" }}>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} md={match && mt}>
               <FooterNavigation
                 menu={wpMenu.menuItems?.nodes}
                 menuColor="common.white"

@@ -9,11 +9,12 @@ export const useHomeQuery = () => {
           clientLogo {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 720) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 720
+                  formats: [AUTO, WEBP, PNG, JPG]
+                  placeholder: BLURRED
+                )
               }
-              publicURL
             }
           }
           reinforcementStatement {
@@ -26,11 +27,16 @@ export const useHomeQuery = () => {
             slideImage {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1920) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 1920
+                    formats: [AUTO, WEBP, PNG, JPG]
+                    placeholder: BLURRED
+                    layout: FULL_WIDTH
+                    quality: 80
+                    webpOptions: { quality: 70 }
+                    height: 600
+                  )
                 }
-                publicURL
               }
             }
           }

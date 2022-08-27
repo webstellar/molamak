@@ -1,14 +1,15 @@
 import * as React from "react"
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/Seo"
-import FontStyles from "../styles/Fontstyles"
 import "./index.css"
+import Hero from "../components/hero/Hero"
+
+import { Typography, CssBaseline, Container, Toolbar, Box } from "@mui/material"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <FontStyles />
-    <h1>Let's see if it works</h1>
+    <Hero />
   </Layout>
 )
 
