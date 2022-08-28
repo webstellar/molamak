@@ -24,33 +24,33 @@ const SolutionGrid = () => {
     <>
       {solutions.map(solution => (
         <Grid item key={solution} xs={12} sm={6} md={3}>
+          <MoAvatar sx={{ width: 95, height: 95 }}>
+            <GatsbyImage
+              image={
+                solution?.solutionFeaturedImage?.localFile?.childImageSharp
+                  ?.gatsbyImageData
+              }
+              alt="solution featured image"
+            />
+          </MoAvatar>
           <Card
             sx={{
-              height: "100%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
               alignItems: "baseline",
+              pt: 6,
             }}
           >
-            <MoAvatar sx={{ width: 95, height: 95 }}>
-              <GatsbyImage
-                image={
-                  solution?.solutionFeaturedImage?.localFile?.childImageSharp
-                    ?.gatsbyImageData
-                }
-                alt="solution featured image"
-              />
-            </MoAvatar>
             <CardContent>
               <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
+                sx={{ fontSize: 14, fontWeight: "bold" }}
+                color="text.primary"
                 gutterBottom
               >
                 {solution.solutionName}
               </Typography>
-              <Typography variant="body2">
+              <Typography variant="body2" color="text.secondary">
                 {solution.solutionDescription}
               </Typography>
             </CardContent>
