@@ -21,8 +21,8 @@ import { useTheme } from "@mui/material/styles"
 const HeroImages = ({ slideText, slideButton, slideImage }) => {
   const theme = useTheme()
   const match = useMediaQuery(theme.breakpoints.down("md"))
-  const md = "8"
-  const dt = "4"
+  const md = 8
+  const dt = 4
   return (
     <>
       <CssBaseline />

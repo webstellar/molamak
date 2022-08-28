@@ -20,6 +20,21 @@ export const useHomeQuery = () => {
           reinforcementStatement {
             reinforcementStatement
             reinforcementStatementButton
+            reinforcementStatementBackground {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 1920
+                    formats: [AUTO, WEBP, PNG, JPG]
+                    quality: 100
+                    webpOptions: { quality: 100 }
+                    placeholder: BLURRED
+                    height: 480
+                    layout: FULL_WIDTH
+                  )
+                }
+              }
+            }
           }
           slider {
             slideButton

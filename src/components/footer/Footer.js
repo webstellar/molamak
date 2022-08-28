@@ -46,7 +46,7 @@ const Footer = () => {
       >
         <Container maxWidth="xl">
           <Toolbar sx={{ flexWrap: "wrap" }}>
-            <Box sx={{ flexGrow: 1 }} md={match && mt}>
+            <Box sx={{ flexGrow: 1 }} md={match ? mt : undefined}>
               <FooterNavigation
                 menu={wpMenu.menuItems?.nodes}
                 menuColor="common.white"
