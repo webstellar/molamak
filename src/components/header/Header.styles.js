@@ -25,7 +25,3 @@ export const MoPhoneIcon = styled(PhoneEnabledIcon)(({ theme }) => ({
   height: "65px",
   cursor: "pointer",
 }))
-
-{
-  /* Link Pending for PhoneIcon */
-}

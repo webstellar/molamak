@@ -8,10 +8,11 @@ export const MoBgImage = styled(BgImage)(({ theme }) => ({
   alignItems: "center",
   minHeight: 480,
   minWidth: "100%",
+  backgroundRepeat: "no-repeat",
+  backgroundposition: "center",
   [theme.breakpoints.down("md")]: {
-    minHeight: 200,
+    minHeight: 400,
   },
-  
 }))
 
 export const MoStyledImg = styled(GatsbyImage)({

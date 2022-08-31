@@ -10,13 +10,7 @@ import PropTypes from "prop-types"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import "./../../styles/global.css"
 
-import {
-  CssBaseline,
-  Container,
-  createTheme,
-  colors,
-  ThemeProvider,
-} from "@mui/material"
+import { createTheme, colors, ThemeProvider } from "@mui/material"
 
 import Header from "../header/Header"
 import Secondaryheader from "../header/Secondaryheader"

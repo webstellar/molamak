@@ -14,7 +14,7 @@ export const useMenuQuery = () => {
         menuItems {
           nodes {
             label
-            url
+            uri
             parentId
             id
             childItems {
@@ -23,21 +23,6 @@ export const useMenuQuery = () => {
                 title
                 uri
                 label
-              }
-            }
-          }
-        }
-      }
-      allWpMediaItem(filter: { title: { eq: "molamak@3x" } }) {
-        edges {
-          node {
-            sourceUrl
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1500) {
-                  ...GatsbyImageSharpFluid
-                }
               }
             }
           }

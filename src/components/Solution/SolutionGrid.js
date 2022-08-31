@@ -1,21 +1,14 @@
 import React from "react"
 import { useSolutionQuery } from "../../hooks/useSolutionQuery"
 import { GatsbyImage } from "gatsby-plugin-image"
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Button,
-  Typography,
-  Avatar,
-  Grid,
-} from "@mui/material"
-import { MoAvatar } from "./SolutionGrid.styles"
+import { Link } from "gatsby"
+import { Card, CardActions, CardContent, Typography, Grid } from "@mui/material"
+import { MoAvatar, MoButton } from "./SolutionGrid.styles"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 
 const SolutionGrid = () => {
   const {
-    wpPage: { solutionsFieldGroup: data },
+    wpPage: { solutionsFieldGroup: data, uri: link },
   } = useSolutionQuery()
 
   const solutions = data.solutions
@@ -55,9 +48,11 @@ const SolutionGrid = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" endIcon={<ArrowForwardIosIcon />}>
-                Read More
-              </Button>
+              <MoButton size="small" endIcon={<ArrowForwardIosIcon />}>
+                <Link to={link} style={{ textDecoration: "none" }}>
+                  Read More
+                </Link>
+              </MoButton>
             </CardActions>
           </Card>
         </Grid>

@@ -1,8 +1,9 @@
 import * as React from "react"
 import { MoActive } from "./Navigation.styles"
-import { Link, Menu, MenuItem, Button } from "@mui/material"
+import { Menu, MenuItem, Button } from "@mui/material"
 import Fade from "@mui/material/Fade"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import { Link } from "gatsby"
 
 const Navigation = ({ menu, menuColor }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -22,31 +23,42 @@ const Navigation = ({ menu, menuColor }) => {
             <>
               {/* Pending fix on the button and hover*/}
               <Button
+                key={menuItem.id}
                 variant="button"
                 underline="none"
                 color={menuColor}
                 sx={{
                   my: 1,
-                  mx: 1.5,
+                  mx: 1,
                   textTransform: "uppercase",
-                  fontWeight: "bold",
-                  cursor: "pointer",
                   fontSize: 16,
                 }}
-                key={menuItem.id}
-                href={menuItem.url}
                 id="basic-button"
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
-                onClick={menuItem.childItems.nodes.length !== 0 && handleClick}
+                onMouseOver={
+                  menuItem.childItems.nodes.length !== 0
+                    ? handleClick
+                    : undefined
+                }
                 endIcon={
                   menuItem.childItems.nodes.length !== 0 && (
                     <KeyboardArrowDownIcon />
                   )
                 }
               >
-                {menuItem.label}
+                <Link
+                  to={menuItem.uri}
+                  style={{
+                    color: `${menuColor}`,
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {menuItem.label}
+                </Link>
               </Button>
 
               {menuItem.childItems.nodes.length !== 0 ? (
@@ -63,10 +75,10 @@ const Navigation = ({ menu, menuColor }) => {
                   {menuItem.childItems.nodes.map(childItem => (
                     <MenuItem key={childItem.id} onClick={handleClose}>
                       <Link
-                        href={childItem.url}
-                        underline="none"
-                        color={menuColor}
-                        sx={{
+                        to={childItem.uri}
+                        style={{
+                          color: `${menuColor}`,
+                          textDecoration: "none",
                           cursor: "pointer",
                         }}
                       >

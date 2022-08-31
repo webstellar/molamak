@@ -1,29 +1,13 @@
 import React from "react"
 import HeroImages from "./HeroImages"
-import SolutionGrid from "../Solution/SolutionGrid"
 import { useHomeQuery } from "../../hooks/useHomeQuery"
-import {
-  Box,
-  Typography,
-  Container,
-  Grid,
-  Stack,
-  CssBaseline,
-} from "@mui/material"
+import { Typography, Container, Grid, Stack, CssBaseline } from "@mui/material"
 import Carousel from "react-material-ui-carousel"
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 import { MoStyledImg, MoBgImage, MoReinforcementButton } from "./Hero.styles"
 
-import { useMediaQuery } from "@mui/material"
-import { useTheme } from "@mui/material/styles"
-
 const Hero = () => {
-  const theme = useTheme()
-  const match = useMediaQuery(theme.breakpoints.down("md"))
-  const md = 5
-  const dt = 2
-
   const {
     wpPage: { homepageFieldGroup: data },
   } = useHomeQuery()
@@ -52,7 +36,7 @@ const Hero = () => {
           />
         ))}
       </Carousel>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Grid
           container
           spacing={1}
@@ -99,27 +83,6 @@ const Hero = () => {
           </Container>
         </MoBgImage>
       ))}
-      <Container sx={{ py: 8 }} maxWidth="lg">
-        <Grid container spacing={4}>
-          <SolutionGrid />
-        </Grid>
-        <Stack
-          sx={{
-            pt: 8,
-          }}
-          direction="row"
-          spacing={2}
-          justifyContent="center"
-        >
-          <MoReinforcementButton
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForwardIosIcon />}
-          >
-            All Our Solutions
-          </MoReinforcementButton>
-        </Stack>
-      </Container>
     </>
   )
 }

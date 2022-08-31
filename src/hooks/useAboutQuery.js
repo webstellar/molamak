@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useSolutionQuery = () => {
+export const useAboutQuery = () => {
   const data = useStaticQuery(graphql`
-    query SolutionQuery {
-      wpPage(databaseId: { eq: 17 }) {
+    query AboutQuery {
+      wpPage(databaseId: { eq: 11 }) {
         content
         title
         uri
@@ -12,29 +12,34 @@ export const useSolutionQuery = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  placeholder: BLURRED
                   width: 1920
                   formats: [AUTO, WEBP]
                   quality: 100
                   webpOptions: { quality: 100 }
+                  placeholder: BLURRED
                 )
               }
             }
           }
         }
-        solutionsFieldGroup {
-          solutions {
-            solutionName
-            solutionDescription
-            solutionFeaturedImage {
+
+        aboutusFieldGroup {
+          ourHistory {
+            historyText
+            keyArea
+            year
+          }
+          ourTeam {
+            teamName
+            teamShortDescription
+            teamPicture {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
+                    formats: [WEBP, AUTO]
                     placeholder: BLURRED
-                    width: 1920
-                    formats: [AUTO, WEBP]
-                    quality: 100
                     webpOptions: { quality: 100 }
+                    quality: 100
                   )
                 }
               }

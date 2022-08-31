@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles"
-import { AppBar, Grid, Button, Paper } from "@mui/material"
+import { Grid, Button, Paper } from "@mui/material"
 import { BgImage } from "gbimage-bridge"
 
 export const MoStatementButton = styled(Button)({
@@ -10,8 +10,10 @@ export const MoStatementButton = styled(Button)({
 export const MoBgImage = styled(BgImage)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  minHeight: 600,
   minWidth: "100%",
+  minHeight: 600,
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
   [theme.breakpoints.down("md")]: {
     minHeight: 200,
   },

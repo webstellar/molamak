@@ -4,6 +4,8 @@ export const useSolutionsQuery = () => {
   const data = useStaticQuery(graphql`
     query SolutionsQuery {
       wpSolution {
+        title
+        uri
         content
         featuredImage {
           node {
@@ -13,8 +15,8 @@ export const useSolutionsQuery = () => {
                   quality: 100
                   width: 1920
                   height: 360
-                  formats: [AUTO, WEBP, PNG, JPG]
-                  webpOptions: { quality: 100 }
+                  formats: [AUTO, WEBP]
+                  webpOptions: { quality: 80 }
                   placeholder: BLURRED
                 )
               }
@@ -29,8 +31,8 @@ export const useSolutionsQuery = () => {
                   quality: 100
                   width: 1920
                   height: 360
-                  formats: [AUTO, WEBP, PNG, JPG]
-                  webpOptions: { quality: 100 }
+                  formats: [AUTO, WEBP]
+                  webpOptions: { quality: 80 }
                   placeholder: BLURRED
                 )
               }

@@ -9,11 +9,7 @@ export const useHomeQuery = () => {
           clientLogo {
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 720
-                  formats: [AUTO, WEBP, PNG, JPG]
-                  placeholder: BLURRED
-                )
+                gatsbyImageData(width: 720, formats: [AUTO, WEBP])
               }
             }
           }
@@ -24,13 +20,11 @@ export const useHomeQuery = () => {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 1920
-                    formats: [AUTO, WEBP, PNG, JPG]
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
                     quality: 100
                     webpOptions: { quality: 100 }
-                    placeholder: BLURRED
                     height: 480
-                    layout: FULL_WIDTH
                   )
                 }
               }
@@ -43,12 +37,11 @@ export const useHomeQuery = () => {
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 1920
-                    formats: [AUTO, WEBP, PNG, JPG]
                     placeholder: BLURRED
-                    layout: FULL_WIDTH
-                    quality: 80
-                    webpOptions: { quality: 70 }
+                    width: 1920
+                    formats: [AUTO, WEBP]
+                    quality: 100
+                    webpOptions: { quality: 100 }
                     height: 600
                   )
                 }
