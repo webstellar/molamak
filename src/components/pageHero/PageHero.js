@@ -6,7 +6,7 @@ const PageHero = ({ img, pageTitle }) => {
   return (
     <>
       <CssBaseline />
-      <MoBgImage image={img}>
+      <MoBgImage image={img} style={{ background: "#000" }}>
         <Container maxWidth="xl">
           <MoTypography variant="h1" align="left" color="grey.50" paragraph>
             {pageTitle}

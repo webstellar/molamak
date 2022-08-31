@@ -120,27 +120,6 @@ export const pageQuery = graphql`
           }
         }
       }
-
-      wpChildren {
-        nodes {
-          uri
-          ... on WpPage {
-            id
-            title
-            uri
-          }
-        }
-      }
-
-      wpParent {
-        node {
-          ... on WpPage {
-            id
-            uri
-            title
-          }
-        }
-      }
     }
   }
 `

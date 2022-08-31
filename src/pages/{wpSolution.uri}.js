@@ -1,11 +1,40 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
+import PageHero from "../components/pageHero/PageHero"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb"
+import Gallery from "../components/gallery/Gallery"
+import Masonry from "@mui/lab/Masonry"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const SolutionTemplate = () => {
+import { styled } from "@mui/material/styles"
+import { Container, Box } from "@mui/material"
+
+const Wrapper = styled(Container)(({ theme }) => ({
+  padding: theme.spacing(5, 0, 5),
+}))
+
+const SolutionTemplate = ({ data }) => {
   return (
     <Layout>
-      <p>Page</p>
+      {data.solution.featuredImage ? (
+        <PageHero
+          img={
+            data.solution?.featuredImage?.node?.localFile?.childImageSharp
+              ?.gatsbyImageData
+          }
+          pageTitle={data.solution.title}
+        />
+      ) : null}
+      <Breadcrumb current={data.solution} />
+      <Wrapper
+        maxWidth="lg"
+        dangerouslySetInnerHTML={{ __html: data.solution.content }}
+      />
+
+      <Wrapper maxWidth="lg">
+        <Gallery itemData={data.solution?.solutions?.gallery} />
+      </Wrapper>
     </Layout>
   )
 }
@@ -14,7 +43,7 @@ export default SolutionTemplate
 
 export const solutionQuery = graphql`
   query ($id: String!) {
-    soltuion: wpSolution(id: { eq: $id }) {
+    solution: wpSolution(id: { eq: $id }) {
       title
       uri
       content
