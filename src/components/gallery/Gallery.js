@@ -17,6 +17,7 @@ const Gallery = ({ itemData }) => {
                 borderBottomRightRadius: 4,
                 display: "block",
                 width: "100%",
+                height: "auto",
               }}
             />
           </div>

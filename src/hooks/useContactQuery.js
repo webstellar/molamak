@@ -4,6 +4,7 @@ export const useContactQuery = () => {
   const data = useStaticQuery(graphql`
     query ContactQuery {
       wpPage(databaseId: { eq: 14 }) {
+        content
         title
         uri
         featuredImage {
