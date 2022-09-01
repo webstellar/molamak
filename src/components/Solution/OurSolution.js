@@ -1,5 +1,5 @@
 import React from "react"
-import { MoAvatar, MoCard, MoGrid } from "./OurSolution.style"
+import { MoAvatar, MoCard, MoGrid } from "./OurSolution.styles"
 import { Typography, CardContent, Grid, Button } from "@mui/material"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 import { GatsbyImage } from "gatsby-plugin-image"

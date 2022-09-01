@@ -1,5 +1,5 @@
 import React from "react"
-import { MoAvatar, MoCard, MoTypography } from "./OurTeam.style"
+import { MoAvatar, MoCard, MoTypography } from "./OurTeam.styles"
 import { Typography, CardContent, Grid } from "@mui/material"
 import { GatsbyImage } from "gatsby-plugin-image"
 
