@@ -33,11 +33,8 @@ const Header = () => {
                 <MoImg src={Logo} alt={site.siteMetaData?.title} />
               </Link>
             </Box>
-            <Navigation
-              menu={wpMenu.menuItems?.nodes}
-              menuColor="text.primary"
-            />
-            <MoPhoneIcon fontSize="large"/>
+            <Navigation menu={wpMenu.menuItems?.nodes} menuColor="#000" />
+            <MoPhoneIcon fontSize="large" />
             <Hamburger handleOverlayMenu={handleOverlayMenu} />
             <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
           </Toolbar>
