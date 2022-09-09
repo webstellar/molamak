@@ -20,7 +20,7 @@ const OurTeam = ({ ourTeam }) => {
             <MoAvatar sx={{ boxShadow: 3 }}>
               <GatsbyImage
                 image={
-                  team.teamPicture.localFile.childImageSharp.gatsbyImageData
+                  team.teamPicture?.localFile.childImageSharp.gatsbyImageData
                 }
                 alt={team.teamName}
               />
