@@ -4,11 +4,9 @@ import Layout from "../components/layout/Layout"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import Gallery from "../components/gallery/Gallery"
-import Masonry from "@mui/lab/Masonry"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 import { styled } from "@mui/material/styles"
-import { Container, Box } from "@mui/material"
+import { Container } from "@mui/material"
 
 const Wrapper = styled(Container)(({ theme }) => ({
   padding: theme.spacing(5, 0, 5),

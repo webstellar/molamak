@@ -1,14 +1,26 @@
 import * as React from "react"
+import Lottie from "react-lottie"
+import * as lottie404 from "../lottie/lottie404.json"
 
 import Layout from "../components/layout/Layout"
 import Seo from "../components/seo/Seo"
 
-const NotFoundPage = () => (
-  <Layout>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const NotFoundPage = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: lottie404,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
+
+  return (
+    <Layout>
+      <Seo title="404: Not found" />
+      <Lottie options={defaultOptions} height={400} width={640} />
+    </Layout>
+  )
+}
 
 export default NotFoundPage
