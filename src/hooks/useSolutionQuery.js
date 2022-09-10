@@ -26,6 +26,7 @@ export const useSolutionQuery = () => {
           solutions {
             solutionName
             solutionDescription
+            solutionLink
             solutionFeaturedImage {
               localFile {
                 childImageSharp {

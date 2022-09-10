@@ -1,6 +1,6 @@
 import React from "react"
-import { CssBaseline, TextField, Typography, Button, Grid } from "@mui/material"
-import { MoBox, MoAvatar } from "./ContactForm.styles"
+import { Typography, Grid, Card, CardContent } from "@mui/material"
+import { MoGrid, MoAvatar, MoButton, MoTextField } from "./ContactForm.styles"
 
 const ContactForm = () => {
   return (
@@ -10,60 +10,67 @@ const ContactForm = () => {
           ?
         </Typography>
       </MoAvatar>
-      <CssBaseline />
-      <MoBox
-        component="form"
-        sx={{
-          "& .MuiTextField-root": { m: 1, backgroundColor: "#fff" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={12} md={6}>
-            <TextField
-              label="Firstname"
-              id="filled-size-normal"
-              variant="filled"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <TextField
-              label="Lastname"
-              id="filled-size-normal"
-              variant="filled"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <TextField
-              label="Email Address"
-              id="filled-size-normal"
-              variant="filled"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-            <TextField
-              label="Phone  Number"
-              id="filled-size-normal"
-              variant="filled"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Message"
-              id="filled-size-normal"
-              variant="filled"
-            />
-          </Grid>
-          <Button type="submit" variant="contained" sx={{ borderRadius: 0 }}>
-            Send
-          </Button>
-        </Grid>
-      </MoBox>
+
+      <MoGrid>
+        <Card
+          sx={{
+            maxWidth: 500,
+            margin: "0 auto",
+            backgroundColor: "#c4c4c4",
+            boxShadow: 0,
+          }}
+        >
+          <CardContent>
+            <form>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <MoTextField
+                    label="Firstname"
+                    id="filled-size-normal"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <MoTextField
+                    label="Lastname"
+                    id="filled-size-normal"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <MoTextField
+                    label="Email-Address"
+                    id="filled-size-normal"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <MoTextField
+                    label="Phone"
+                    id="filled-size-normal"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <MoTextField
+                    fullWidth
+                    multiline
+                    rows={4}
+                    label="Message"
+                    id="filled-size-normal"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} justifyItems="flex-end">
+                  <MoButton type="submit" variant="contained" color="primary">
+                    Send
+                  </MoButton>
+                </Grid>
+              </Grid>
+            </form>
+          </CardContent>
+        </Card>
+      </MoGrid>
     </div>
   )
 }

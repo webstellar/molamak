@@ -24,7 +24,12 @@ const Footer = () => {
             >
               Interested in getting a free consultation by our security experts?
             </Typography>
-            <MoStatementButton variant="contained" color="primary" size="large">
+            <MoStatementButton
+              variant="contained"
+              color="primary"
+              size="large"
+              href="/contact-us"
+            >
               <Box
                 sx={{
                   textTransform: "uppercase",

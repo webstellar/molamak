@@ -31,12 +31,15 @@ const HeroImages = ({ slideText, slideButton, slideImage }) => {
               <Typography variant="p" color="inherit" paragraph gutterBottom>
                 {slideText}
               </Typography>
-              <MoStatementButton variant="contained" size="large">
+              <MoStatementButton
+                variant="contained"
+                size="large"
+                href="/contact-us"
+              >
                 <Box
                   sx={{
                     textTransform: "uppercase",
                     fontWeight: "bold",
-                    color: "text.primary",
                   }}
                 >
                   {slideButton}

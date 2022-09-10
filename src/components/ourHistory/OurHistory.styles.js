@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles"
-import { Avatar, Card } from "@mui/material"
+import { Avatar         } from "@mui/material"
 
 export const MoAvatar = styled(Avatar)({
   marginBottom: "-2rem",

@@ -76,7 +76,11 @@ const Hero = () => {
               spacing={2}
               justifyContent="center"
             >
-              <MoReinforcementButton variant="contained" size="large">
+              <MoReinforcementButton
+                variant="contained"
+                size="large"
+                href="/contact-us"
+              >
                 {reinforcement.reinforcementStatementButton}
               </MoReinforcementButton>
             </Stack>

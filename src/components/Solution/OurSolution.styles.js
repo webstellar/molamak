@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles"
 import { Avatar, Box, Card, Grid } from "@mui/material"
+import { Link } from "gatsby"
 
 export const MoAvatar = styled(Avatar)(({ theme }) => ({
   marginBottom: "-4rem",
@@ -27,3 +28,7 @@ export const MoGrid = styled(Grid)(({ theme }) => ({
     marginTop: "2rem",
   },
 }))
+
+export const MoLink = styled(Link)({
+  color: "#000",
+})

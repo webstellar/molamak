@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles"
-import { Box, Avatar, TextField } from "@mui/material"
+import { Box as Grid, Avatar, TextField, Button } from "@mui/material"
 
-export const MoBox = styled(Box)(({ theme }) => ({
+export const MoGrid = styled(Grid)(({ theme }) => ({
   padding: theme.spacing(10, 0, 10),
   backgroundColor: "#c4c4c4",
   borderRadius: 15,
@@ -11,15 +11,19 @@ export const MoBox = styled(Box)(({ theme }) => ({
 export const MoAvatar = styled(Avatar)(({ theme }) => ({
   marginBottom: "-3rem",
   width: 120,
-  height: 120,
-  width: 95,
-  height: 95,
+  height: 120, 
   backgroundColor: theme.palette.secondary.main,
   color: "grey.50",
 }))
 
 export const MoTextField = styled(TextField)({
-  border: 0,
-  borderRadius: 0,
   backgroundColor: "#fff",
 })
+
+export const MoButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.secondary.main,
+  borderRadius: 0,
+  "&:hover": {
+    backgroundColor: theme.palette.secondary.main,
+  },
+}))

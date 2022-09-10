@@ -2,10 +2,15 @@ import { styled } from "@mui/material/styles"
 import { Grid, Button, Paper } from "@mui/material"
 import { BgImage } from "gbimage-bridge"
 
-export const MoStatementButton = styled(Button)({
+export const MoStatementButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#fff",
   borderRadius: 0,
-})
+  color: "#000",
+  "&:hover": {
+    backgroundColor: theme.palette.secondary.main,
+    color: "#fff",
+  },
+}))
 
 export const MoBgImage = styled(BgImage)(({ theme }) => ({
   display: "flex",

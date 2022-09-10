@@ -1,5 +1,5 @@
 import React from "react"
-import { MoAvatar, MoCard, MoGrid } from "./OurSolution.styles"
+import { MoAvatar, MoCard, MoGrid, MoLink } from "./OurSolution.styles"
 import { Typography, CardContent, Grid, Button } from "@mui/material"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -46,7 +46,12 @@ const OurSolutions = ({ ourSolution }) => {
                   cursor: "pointer",
                 }}
               >
-                Read more
+                <MoLink
+                  to={solution.solutionLink}
+                  style={{ textDecoration: "none" }}
+                >
+                  Read more
+                </MoLink>
               </Button>
             </Grid>
             <MoGrid xs={12} md={4}>

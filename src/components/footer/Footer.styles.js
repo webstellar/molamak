@@ -13,7 +13,7 @@ export const MoStatement = styled(AppBar)(({ theme }) => ({
 export const MoStatementButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.main,
   borderRadius: 0,
-  hover: {
+  "&:hover": {
     backgroundColor: theme.palette.secondary.main,
   },
 }))

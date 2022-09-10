@@ -26,7 +26,7 @@ export const MoReinforcementButton = styled(Button)({
   fontWeight: "bold",
   color: "#000",
 
-  hover: {
+  "&:hover": {
     color: "#fff",
     backgroundColor: "#000",
   },
