@@ -37,6 +37,20 @@ module.exports = {
         url: `https://site.molamaksecurityservices.com/graphql`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        short_name: `Molamak`,
+        name: `Molamak Security Services Limited`,
+        description: `The application allows you access Molamak website directly on your device.`,
+        start_url: `/`,
+        lang: `en`,
+        background_color: `#1A237E`,
+        theme_color: `#1A237E`,
+        display: `standalone`,
+        icon: `src/images/molamak-favicon.png`,
+      },
+    },
     `gatsby-plugin-styled-components`,
 
     `gatsby-plugin-offline`,
