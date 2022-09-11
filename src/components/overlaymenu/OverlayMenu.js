@@ -21,7 +21,7 @@ const OverlayMenu = ({ menuOpen, callback }) => {
                 <ListItem disablePadding key={item.id}>
                   <ListItemButton
                     component={Link}
-                    to={item.url}
+                    to={item.uri}
                     activeClassName="overlayActive"
                   >
                     <ListItemText primary={item.label} />

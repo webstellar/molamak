@@ -6,12 +6,15 @@ export const MoGrid = styled(Grid)(({ theme }) => ({
   backgroundColor: "#c4c4c4",
   borderRadius: 15,
   marginLeft: "3rem",
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(8, 5, 8),
+  },
 }))
 
 export const MoAvatar = styled(Avatar)(({ theme }) => ({
   marginBottom: "-3rem",
   width: 120,
-  height: 120, 
+  height: 120,
   backgroundColor: theme.palette.secondary.main,
   color: "grey.50",
 }))

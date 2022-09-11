@@ -1,4 +1,5 @@
 import React from "react"
+import { FormspreeProvider } from "@formspree/react"
 import Layout from "./../components/layout/Layout"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
@@ -18,7 +19,7 @@ const ContactUs = () => {
   const data = useContactQuery()
 
   return (
-    <>
+    <FormspreeProvider project="">
       <Layout>
         {data.wpPage.featuredImage ? (
           <PageHero
@@ -41,7 +42,7 @@ const ContactUs = () => {
           <Faq questions={data.wpPage.contactusFieldGroup.generalQuestions} />
         </Wrapper>
       </Layout>
-    </>
+    </FormspreeProvider>
   )
 }
 export default ContactUs
