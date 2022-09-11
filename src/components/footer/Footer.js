@@ -3,6 +3,7 @@ import { useMenuQuery } from "../../hooks/useMenuQuery"
 import { MoAppBar, MoStatement, MoStatementButton } from "./Footer.styles"
 import { Typography, CssBaseline, Container, Toolbar, Box } from "@mui/material"
 import FooterNavigation from "../navigation/FooterNavigation"
+import SimpleMap from "../map/SimpleMap"
 import { useTheme } from "@mui/material/styles"
 import { useMediaQuery } from "@mui/material"
 
@@ -10,7 +11,7 @@ const Footer = () => {
   const { wpMenu } = useMenuQuery()
   const theme = useTheme()
   const match = useMediaQuery(theme.breakpoints.down("md"))
-  const mt = "12"
+
   return (
     <footer>
       <CssBaseline />
@@ -42,7 +43,7 @@ const Footer = () => {
           </Toolbar>
         </Container>
       </MoStatement>
-
+      <SimpleMap />
       <MoAppBar
         position="static"
         elevation={0}
@@ -50,16 +51,32 @@ const Footer = () => {
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
         <Container maxWidth="xl">
-          <Toolbar sx={{ flexWrap: "wrap" }}>
-            <Box sx={{ flexGrow: 1 }} md={match ? mt : undefined}>
+          <Toolbar>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: !match ? "row" : "column",
+                justifyContent: !match ? "space-between" : "flex-start",
+                alignItems: !match ? "flex-end" : "flex-start",
+                pt: !match ? undefined : 2,
+                pb: !match ? undefined : 2,
+              }}
+            >
               <FooterNavigation
                 menu={wpMenu.menuItems?.nodes}
                 menuColor="common.white"
               />
+              <Typography
+                Typography
+                variant="p"
+                color="common.white"
+                sm={12}
+                sx={{ mt: match ? 5 : undefined }}
+              >
+                ©{new Date().getFullYear()} &middot; All Rights Reserved.
+              </Typography>
             </Box>
-            <Typography variant="p" color="common.white">
-              © {new Date().getFullYear()} &middot; All Rights Reserved.
-            </Typography>
           </Toolbar>
         </Container>
       </MoAppBar>

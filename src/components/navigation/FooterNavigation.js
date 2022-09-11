@@ -8,8 +8,11 @@ const Navigation = ({ menu, menuColor }) => {
   const match = useMediaQuery(theme.breakpoints.down("md"))
 
   const mobileDisplay = {
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
     py: 1,
+    mb: 1,
   }
 
   return (

@@ -4,6 +4,7 @@ import { Menu, MenuItem, Button } from "@mui/material"
 import Fade from "@mui/material/Fade"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import { Link } from "gatsby"
+import { navigate } from "gatsby"
 
 const Navigation = ({ menu, menuColor }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -37,6 +38,9 @@ const Navigation = ({ menu, menuColor }) => {
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
+                onClick={() => {
+                  navigate(`${menuItem.uri}`)
+                }}
                 onMouseOver={
                   menuItem.childItems.nodes.length !== 0
                     ? handleClick
@@ -49,7 +53,6 @@ const Navigation = ({ menu, menuColor }) => {
                 }
               >
                 <Link
-                  to={menuItem.uri}
                   style={{
                     color: `${menuColor}`,
                     textDecoration: "none",

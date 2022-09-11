@@ -11,7 +11,7 @@ export const Overlay = styled.div`
   position: fixed;
   opacity: ${props => (props.menuOpen ? "1" : "0")};
   transform: ${props =>
-    props.menuOpen ? "translateX(0%)" : "translateX(-100%)"};
+    props.menuOpen ? "translate(0%, 45%)" : "translate(-100%, 0%)"};
   z-index: 100000;
   background: #fff;
   left: 0px;
