@@ -21,7 +21,12 @@ const Footer = () => {
             <Typography
               variant="h6"
               color="inherit"
-              sx={{ flexGrow: 1, fontWeight: "bold", lineHeight: "1.5rem" }}
+              sx={{
+                flexGrow: 1,
+                fontWeight: "bold",
+                fontSize: match && "1.2rem",
+                mb: match && 2,
+              }}
             >
               Interested in getting a free consultation by our security experts?
             </Typography>

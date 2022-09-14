@@ -24,7 +24,7 @@ const Navigation = ({ menu, menuColor }) => {
               underline="none"
               color={menuColor}
               key={menuItem.id}
-              href={menuItem.url}
+              href={menuItem.uri}
               sx={match && mobileDisplay}
             >
               {menuItem.label}

@@ -46,7 +46,7 @@ const Hero = () => {
           sx={{ mb: 4 }}
         >
           {clientLogo.map((logo, i) => (
-            <Grid xs={12} sm={6} md={2} key={i}>
+            <Grid xs={6} sm={6} md={2} key={i}>
               <MoStyledImg
                 image={logo?.localFile?.childImageSharp?.gatsbyImageData}
                 alt="client logo"

@@ -20,7 +20,7 @@ export const MoBgImage = styled(BgImage)(({ theme }) => ({
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   [theme.breakpoints.down("md")]: {
-    minHeight: 200,
+    minHeight: 400,
   },
 }))
 
