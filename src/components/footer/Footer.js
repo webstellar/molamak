@@ -1,5 +1,5 @@
 import React from "react"
-import { useMenuQuery } from "../../hooks/useMenuQuery"
+import { useFooterMenuQuery } from "../../hooks/useFooterMenuQuery"
 import { MoAppBar, MoStatement, MoStatementButton } from "./Footer.styles"
 import { Typography, CssBaseline, Container, Toolbar, Box } from "@mui/material"
 import FooterNavigation from "../navigation/FooterNavigation"
@@ -8,7 +8,7 @@ import { useTheme } from "@mui/material/styles"
 import { useMediaQuery } from "@mui/material"
 
 const Footer = () => {
-  const { wpMenu } = useMenuQuery()
+  const { wpMenu } = useFooterMenuQuery()
   const theme = useTheme()
   const match = useMediaQuery(theme.breakpoints.down("md"))
 
