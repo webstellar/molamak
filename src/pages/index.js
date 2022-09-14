@@ -29,7 +29,7 @@ const IndexPage = () => (
           variant="contained"
           size="large"
           endIcon={<ArrowForwardIosIcon />}
-          href="/contact-us"
+          href="/our-solutions"
         >
           All Our Solutions
         </MoReinforcementButton>
