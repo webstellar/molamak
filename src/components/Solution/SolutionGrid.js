@@ -43,7 +43,13 @@ const SolutionGrid = () => {
                 {solution.solutionName}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {solution.solutionDescription}
+                {solution.solutionDescription.substring(0, 150)}
+                <MoLink
+                  to={solution.solutionLink}
+                  style={{ textDecoration: "none", color: "#1A237E" }}
+                >
+                  ...
+                </MoLink>
               </Typography>
             </CardContent>
             <CardActions>

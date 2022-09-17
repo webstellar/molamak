@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
-import Gallery from "../components/gallery/Gallery"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { styled } from "@mui/material/styles"
 import { Container } from "@mui/material"
@@ -12,47 +12,58 @@ const Wrapper = styled(Container)(({ theme }) => ({
   padding: theme.spacing(5, 0, 5),
 }))
 
-const SolutionTemplate = ({ data }) => {
+const TeamTemplate = ({ data }) => {
   return (
     <Layout>
-      {data.solution.featuredImage ? (
+      {data.team.featuredImage ? (
         <PageHero
           img={
-            data.solution?.featuredImage?.node?.localFile?.childImageSharp
+            data.team?.featuredImage?.node?.localFile?.childImageSharp
               ?.gatsbyImageData
           }
-          pageTitle={data.solution.title}
+          pageTitle={data.team.title}
         />
       ) : null}
-      <Breadcrumb current={data.solution} />
+      <Breadcrumb current={data.team} />
+      <Wrapper>
+        <GatsbyImage
+          image={
+            data.team.teamProfile?.teamImage?.localFile.childImageSharp
+              .gatsbyImageData
+          }
+          alt={data.team.title}
+          style={{
+            maxWidth: "100%",
+            height: "50%",
+            objectFit: "none",
+            objectPosition: "center top",
+          }}
+        />
+      </Wrapper>
       <Wrapper
         maxWidth="lg"
-        dangerouslySetInnerHTML={{ __html: data.solution.content }}
+        dangerouslySetInnerHTML={{ __html: data.team.content }}
       />
-
-      <Wrapper maxWidth="lg">
-        <Gallery itemData={data.solution?.solutions?.gallery} />
-      </Wrapper>
     </Layout>
   )
 }
 
-export default SolutionTemplate
+export default TeamTemplate
 
-export const solutionQuery = graphql`
+export const teamQuery = graphql`
   query ($id: String!) {
-    solution: wpSolution(id: { eq: $id }) {
+    team: wpTeam(id: { eq: $id }) {
       title
       uri
       content
-      featuredImage {
-        node {
+      teamProfile {
+        teamImage {
           localFile {
             childImageSharp {
               gatsbyImageData(
                 quality: 100
                 width: 1920
-                height: 360
+                height: 1080
                 formats: [AUTO, WEBP]
                 webpOptions: { quality: 80 }
                 placeholder: BLURRED
@@ -61,15 +72,14 @@ export const solutionQuery = graphql`
           }
         }
       }
-      solutions {
-        title
-        gallery {
+      featuredImage {
+        node {
           localFile {
             childImageSharp {
               gatsbyImageData(
                 quality: 100
                 width: 1920
-                height: 1080
+                height: 360
                 formats: [AUTO, WEBP]
                 webpOptions: { quality: 80 }
                 placeholder: BLURRED

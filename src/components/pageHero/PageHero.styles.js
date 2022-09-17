@@ -15,6 +15,7 @@ export const MoBgImage = styled(BgImage)(({ theme }) => ({
 }))
 
 export const MoTypography = styled(Typography)(({ theme }) => ({
+  fontSize: "5rem",
   [theme.breakpoints.down("md")]: {
     fontSize: "2.5rem",
   },

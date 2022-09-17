@@ -2,6 +2,7 @@ import React from "react"
 import { MoAvatar, MoCard, MoTypography } from "./OurTeam.styles"
 import { Typography, CardContent, Grid } from "@mui/material"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const OurTeam = ({ ourTeam }) => {
   return (
@@ -43,7 +44,17 @@ const OurTeam = ({ ourTeam }) => {
                   {team.teamName}
                 </MoTypography>
                 <Typography variant="body2" color="grey.50">
-                  {team.teamShortDescription}
+                  {team.teamShortDescription.substring(0, 100)}
+                  <Link
+                    to={team.teamUrl}
+                    style={{
+                      cursor: "pointer",
+                      color: "#fff",
+                      textDecoration: "none",
+                    }}
+                  >
+                    ...
+                  </Link>
                 </Typography>
               </CardContent>
             </MoCard>
