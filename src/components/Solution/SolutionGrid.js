@@ -15,7 +15,7 @@ const SolutionGrid = () => {
   return (
     <>
       {solutions.map(solution => (
-        <Grid item key={solution} xs={12} sm={6} md={3}>
+        <Grid item key={solution} xs={6} sm={6} md={3}>
           <MoAvatar sx={{ width: 95, height: 95 }}>
             <GatsbyImage
               image={

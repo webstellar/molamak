@@ -4,6 +4,12 @@ export const useFooterMenuQuery = () => {
   //tag function
   const data = useStaticQuery(graphql`
     query FooterQuery {
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
       wpMenu(name: { eq: "Footer Menu" }) {
         menuItems {
           nodes {

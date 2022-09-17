@@ -1,13 +1,13 @@
 import React from "react"
 import CloseIcon from "@mui/icons-material/Close"
-import { useMenuQuery } from "../../hooks/useMenuQuery"
+import { useFooterMenuQuery } from "../../hooks/useFooterMenuQuery"
 import { Overlay, MoImg } from "./OverlayMenu.styles"
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material"
 import { Link } from "gatsby"
 import Logo from "../../images/molamak-white.png"
 
 const OverlayMenu = ({ menuOpen, callback }) => {
-  const { wpMenu, site } = useMenuQuery()
+  const { wpMenu, site } = useFooterMenuQuery()
   return (
     <Overlay menuOpen={menuOpen}>
       <div className="inner">

@@ -34,7 +34,9 @@ const Header = () => {
               </Link>
             </Box>
             <Navigation menu={wpMenu.menuItems?.nodes} menuColor="#000" />
-            <MoPhoneIcon fontSize="large" />
+            <Link to="tel:+2348124888265" style={{ color: "#000" }}>
+              <MoPhoneIcon fontSize="large" />
+            </Link>
             <Hamburger handleOverlayMenu={handleOverlayMenu} />
             <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
           </Toolbar>
