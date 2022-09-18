@@ -35,8 +35,8 @@ const TeamTemplate = ({ data }) => {
           style={{
             maxWidth: "100%",
             height: "50%",
-            objectFit: "none",
-            objectPosition: "center top",
+            top: "30%",
+            backgroundPosition: "top center",
           }}
         />
       </Wrapper>

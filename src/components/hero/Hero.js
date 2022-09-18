@@ -18,7 +18,6 @@ const Hero = () => {
 
   return (
     <>
-      {/* <MoStyledImg image={imageData} alt="Slide Image" /> */}
       <CssBaseline />
       <Carousel
         IndicatorIcon={false}

@@ -16,7 +16,7 @@ export const MoBgImage = styled(BgImage)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   minWidth: "100%",
-  minHeight: 600,
+  minHeight: 500,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   background: "rgba(0, 0, 0, .4)",

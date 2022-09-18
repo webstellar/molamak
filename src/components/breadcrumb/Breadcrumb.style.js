@@ -22,8 +22,9 @@ export const MoBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     width: "70%",
   },
+  
   [theme.breakpoints.down("sm")]: {
-    width: "50%",
+    width: "70%",
   },
 }))
 

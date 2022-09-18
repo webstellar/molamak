@@ -22,10 +22,13 @@ const HeroImages = ({ slideText, slideButton, slideImage }) => {
           color: "#fff",
         }}
       >
-        <MoBgImage image={slideImage}>
-          {/* <GatsbyImage image={slideImage} alt="Slide Image" /> */}
-          {/*<BackgroundImage {...bgImage} Tag="section">*/}
-          {/* </BackgroundImage>*/}
+        <MoBgImage
+          image={slideImage}
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+          }}
+        >
           <MoGrid container spacing={2}>
             <MoInnerGrid xs={match ? md : dt} sx={{ border: 2 }}>
               <Typography variant="p" color="inherit" paragraph gutterBottom>
