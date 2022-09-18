@@ -10,7 +10,7 @@ import { styled } from "@mui/material/styles"
 import { Container } from "@mui/material"
 
 const Wrapper = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(5, 0, 5),
+  padding: theme.spacing(5, 6, 5),
 }))
 
 const OurSolution = () => {

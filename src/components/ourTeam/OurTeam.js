@@ -1,5 +1,10 @@
 import React from "react"
-import { MoAvatar, MoCard, MoTypography } from "./OurTeam.styles"
+import {
+  MoAvatar,
+  MoCard,
+  MoTypography,
+  MoSmallTypography,
+} from "./OurTeam.styles"
 import { Typography, CardContent, Grid } from "@mui/material"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -7,17 +12,17 @@ import { Link } from "gatsby"
 const OurTeam = ({ ourTeam }) => {
   return (
     <>
-      <Typography
+      <MoTypography
         variant="h2"
         gutterBottom={true}
         align="left"
         sx={{ fontWeight: "Bold" }}
       >
         Our Team
-      </Typography>
+      </MoTypography>
       <Grid container spacing={12}>
         {ourTeam.map((team, i) => (
-          <Grid key={i} item xs={10} md={4}>
+          <Grid key={i} item xs={12} md={4}>
             <MoAvatar sx={{ boxShadow: 3 }}>
               <GatsbyImage
                 image={
@@ -36,13 +41,13 @@ const OurTeam = ({ ourTeam }) => {
               }}
             >
               <CardContent>
-                <MoTypography
+                <MoSmallTypography
                   sx={{ fontWeight: "Bold" }}
                   color="grey.50"
                   gutterBottom
                 >
                   {team.teamName}
-                </MoTypography>
+                </MoSmallTypography>
                 <Typography variant="body2" color="grey.50">
                   {team.teamShortDescription.substring(0, 100)}
                   <Link

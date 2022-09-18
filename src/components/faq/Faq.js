@@ -6,18 +6,19 @@ import {
   Typography,
 } from "@mui/material"
 import AddIcon from "@mui/icons-material/Add"
+import { MoTypography } from "./Faq.styles"
 
 const Faq = ({ questions }) => {
   return (
     <>
-      <Typography
+      <MoTypography
         variant="h2"
         gutterBottom={true}
         align="left"
         sx={{ fontWeight: "bold" }}
       >
         General Questions
-      </Typography>
+      </MoTypography>
       {questions.map(question => (
         <div>
           <Accordion key={question} sx={{ boxShadow: 0, marginBottom: "1rem" }}>

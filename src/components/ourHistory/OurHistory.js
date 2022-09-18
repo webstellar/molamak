@@ -1,32 +1,37 @@
 import React from "react"
 import { Typography, Card, CardContent } from "@mui/material"
-import { MoAvatar, MoDiv } from "./OurHistory.styles"
+import {
+  MoAvatar,
+  MoDiv,
+  MoTypography,
+  MoSmallTypography,
+} from "./OurHistory.styles"
 import "./ourhistory.css"
 
 const OurHistory = ({ ourHistory }) => {
   return (
     <>
-      <Typography
+      <MoTypography
         variant="h2"
         gutterBottom={true}
         align="right"
         sx={{ fontWeight: "Bold" }}
       >
         Our History
-      </Typography>
+      </MoTypography>
       {ourHistory.map((history, i) => {
         const twoFigures = history.year.toString().substr(-2)
         return (
           <MoDiv>
             <div key={i} className={i % 2 === 0 ? "row" : "row-reverse"}>
               <MoAvatar sx={{ boxShadow: 3 }}>
-                <Typography
+                <MoSmallTypography
                   variant="h3"
                   sx={{ fontWeight: "bold" }}
                   color="text.primary"
                 >
                   {twoFigures}
-                </Typography>
+                </MoSmallTypography>
               </MoAvatar>
             </div>
 

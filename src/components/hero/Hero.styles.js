@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles"
-import { Button } from "@mui/material"
+import { Button, Container } from "@mui/material"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 
@@ -31,3 +31,9 @@ export const MoReinforcementButton = styled(Button)({
     backgroundColor: "#000",
   },
 })
+
+export const MoHomeContainer = styled(Container)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(6, 8, 6),
+  },
+}))

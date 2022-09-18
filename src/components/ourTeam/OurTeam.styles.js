@@ -24,7 +24,14 @@ export const MoCard = styled(Card)(({ theme }) => ({
   marginLeft: "15%",
 }))
 
-export const MoTypography = styled(Typography)({
+export const MoSmallTypography = styled(Typography)({
   marginBottom: "2rem",
   marginLeft: "4rem",
 })
+
+
+export const MoTypography = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    fontSize: "2.5rem",
+  },
+}))

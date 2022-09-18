@@ -4,16 +4,19 @@ import Seo from "../components/seo/Seo"
 import "./index.css"
 import Hero from "../components/hero/Hero"
 import SolutionGrid from "../components/Solution/SolutionGrid"
-import { MoReinforcementButton } from "../components/hero/Hero.styles"
+import {
+  MoReinforcementButton,
+  MoHomeContainer,
+} from "../components/hero/Hero.styles"
 
-import { Container, Grid, Stack } from "@mui/material"
+import { Grid, Stack } from "@mui/material"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <Hero />
-    <Container sx={{ py: 8 }} maxWidth="lg">
+    <MoHomeContainer sx={{ py: 8 }} maxWidth="lg">
       <Grid container spacing={4}>
         <SolutionGrid />
       </Grid>
@@ -34,7 +37,7 @@ const IndexPage = () => (
           All Our Solutions
         </MoReinforcementButton>
       </Stack>
-    </Container>
+    </MoHomeContainer>
   </Layout>
 )
 

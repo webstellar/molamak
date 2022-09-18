@@ -18,7 +18,7 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <Seo title="404: Not found" />
-      <Lottie options={defaultOptions} height={400} width={640} />
+      <Lottie options={defaultOptions} height={200} width={320} />
     </Layout>
   )
 }

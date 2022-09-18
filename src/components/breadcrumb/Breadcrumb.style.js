@@ -20,6 +20,9 @@ export const MoBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
   width: "25%",
   clipPath: "polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%)",
   [theme.breakpoints.down("md")]: {
+    width: "70%",
+  },
+  [theme.breakpoints.down("sm")]: {
     width: "50%",
   },
 }))
