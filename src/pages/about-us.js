@@ -5,6 +5,7 @@ import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import OurHistory from "../components/ourHistory/OurHistory"
 import OurTeam from "../components/ourTeam/OurTeam"
 import { useAboutQuery } from "../hooks/useAboutQuery"
+import Seo from "../components/seo/Seo"
 
 import { styled } from "@mui/material/styles"
 import { Container } from "@mui/material"
@@ -19,6 +20,14 @@ const AboutUs = () => {
   return (
     <>
       <Layout>
+        <Seo
+          title={data.wpPage.seo?.title}
+          description={data.wpPage.seo?.metaDesc}
+          image={
+            data.wpPage?.featuredImage?.node?.localFile?.childImageSharp
+              ?.gatsbyImageData
+          }
+        />
         {data.wpPage.featuredImage ? (
           <PageHero
             img={

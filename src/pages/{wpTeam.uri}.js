@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
+import Seo from "../components/seo/Seo"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
-import { GatsbyImage } from "gatsby-plugin-image"
+//import { GatsbyImage } from "gatsby-plugin-image"
 
 import { styled } from "@mui/material/styles"
 import { Container } from "@mui/material"
@@ -15,6 +16,14 @@ const Wrapper = styled(Container)(({ theme }) => ({
 const TeamTemplate = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title={data.team.seo?.title}
+        description={data.team.seo?.metaDesc}
+        image={
+          data.team?.featuredImage?.node?.localFile?.childImageSharp
+            ?.gatsbyImageData
+        }
+      />
       {data.team.featuredImage ? (
         <PageHero
           img={
@@ -25,7 +34,7 @@ const TeamTemplate = ({ data }) => {
         />
       ) : null}
       <Breadcrumb current={data.team} />
-      <Wrapper>
+      {/*<Wrapper>
         <GatsbyImage
           image={
             data.team.teamProfile?.teamImage?.localFile.childImageSharp
@@ -39,7 +48,7 @@ const TeamTemplate = ({ data }) => {
             backgroundPosition: "top center",
           }}
         />
-      </Wrapper>
+        </Wrapper>*/}
       <Wrapper
         maxWidth="lg"
         dangerouslySetInnerHTML={{ __html: data.team.content }}
@@ -53,6 +62,11 @@ export default TeamTemplate
 export const teamQuery = graphql`
   query ($id: String!) {
     team: wpTeam(id: { eq: $id }) {
+      seo {
+        title
+        metaKeywords
+        metaDesc
+      }
       title
       uri
       content

@@ -4,6 +4,11 @@ export const useSolutionQuery = () => {
   const data = useStaticQuery(graphql`
     query SolutionQuery {
       wpPage(databaseId: { eq: 17 }) {
+        seo {
+          title
+          metaKeywords
+          metaDesc
+        }
         content
         title
         uri

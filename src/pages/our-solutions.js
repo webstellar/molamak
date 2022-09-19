@@ -3,6 +3,7 @@ import Layout from "./../components/layout/Layout"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import OurSolutions from "../components/Solution/OurSolution"
+import Seo from "../components/seo/Seo"
 
 import { useSolutionQuery } from "../hooks/useSolutionQuery"
 
@@ -19,6 +20,14 @@ const OurSolution = () => {
   return (
     <>
       <Layout>
+        <Seo
+          title={data.wpPage.seo?.title}
+          description={data.wpPage.seo?.metaDesc}
+          image={
+            data.wpPage?.featuredImage?.node?.localFile?.childImageSharp
+              ?.gatsbyImageData
+          }
+        />
         {data.wpPage.featuredImage ? (
           <PageHero
             img={

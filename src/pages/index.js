@@ -8,13 +8,18 @@ import {
   MoReinforcementButton,
   MoHomeContainer,
 } from "../components/hero/Hero.styles"
+import homeImg from "../images/molamakhome.jpg"
 
 import { Grid, Stack } from "@mui/material"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
+    <Seo
+      title="Home"
+      description="We are one of the longest servicing security firm in Nigeria. We offer core security services to both lives and properties."
+      image={homeImg}
+    />
     <Hero />
     <MoHomeContainer sx={{ py: 8 }} maxWidth="lg">
       <Grid container spacing={4}>

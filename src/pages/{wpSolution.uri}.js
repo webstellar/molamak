@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
+import Seo from "../components/seo/Seo"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import Gallery from "../components/gallery/Gallery"
@@ -15,6 +16,14 @@ const Wrapper = styled(Container)(({ theme }) => ({
 const SolutionTemplate = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title={data.solution.seo?.title}
+        description={data.solution.seo?.metaDesc}
+        image={
+          data.solution?.featuredImage?.node?.localFile?.childImageSharp
+            ?.gatsbyImageData
+        }
+      />
       {data.solution.featuredImage ? (
         <PageHero
           img={
@@ -42,6 +51,11 @@ export default SolutionTemplate
 export const solutionQuery = graphql`
   query ($id: String!) {
     solution: wpSolution(id: { eq: $id }) {
+      seo {
+        title
+        metaKeywords
+        metaDesc
+      }
       title
       uri
       content

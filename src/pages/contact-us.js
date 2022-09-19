@@ -4,6 +4,8 @@ import Layout from "./../components/layout/Layout"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import ContactForm from "../components/contactForm/ContactForm"
+import Seo from "../components/seo/Seo"
+
 import Faq from "../components/faq/Faq"
 
 import { useContactQuery } from "../hooks/useContactQuery"
@@ -21,6 +23,14 @@ const ContactUs = () => {
   return (
     <FormspreeProvider project="">
       <Layout>
+        <Seo
+          title={data.wpPage.seo?.title}
+          description={data.wpPage.seo?.metaDesc}
+          image={
+            data.wpPage?.featuredImage?.node?.localFile?.childImageSharp
+              ?.gatsbyImageData
+          }
+        />
         {data.wpPage.featuredImage ? (
           <PageHero
             img={

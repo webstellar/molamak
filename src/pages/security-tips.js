@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "./../components/layout/Layout"
+import Seo from "../components/seo/Seo"
 import PageHero from "../components/pageHero/PageHero"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb"
 import { useSecurityQuery } from "../hooks/useSecurityQuery"
@@ -26,6 +27,14 @@ const SecurityTip = () => {
   return (
     <>
       <Layout>
+        <Seo
+          title={data.wpPage.seo?.title}
+          description={data.wpPage.seo?.metaDesc}
+          image={
+            data.wpPage?.featuredImage?.node?.localFile?.childImageSharp
+              ?.gatsbyImageData
+          }
+        />
         {data.wpPage.featuredImage ? (
           <PageHero
             img={

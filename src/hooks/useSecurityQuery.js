@@ -4,6 +4,11 @@ export const useSecurityQuery = () => {
   const data = useStaticQuery(graphql`
     query securityQuery {
       wpPage(databaseId: { eq: 20 }) {
+        seo {
+          title
+          metaKeywords
+          metaDesc
+        }
         content
         title
         uri
