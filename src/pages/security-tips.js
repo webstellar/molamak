@@ -49,7 +49,7 @@ const SecurityTip = () => {
           maxWidth="lg"
           dangerouslySetInnerHTML={{ __html: data.wpPage.content }}
         />
-        <Lottie options={defaultOptions} height={540} width={540} />
+        <Lottie options={defaultOptions} height={400} width={400} />
       </Layout>
     </>
   )
