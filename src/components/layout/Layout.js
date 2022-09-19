@@ -1,14 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
 import "./../../styles/global.css"
+import CookieConsent from "react-cookie-consent"
 
 import { createTheme, colors, ThemeProvider } from "@mui/material"
 
@@ -43,6 +37,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
+        <CookieConsent
+          location="bottom"
+          buttonText="I understand"
+          declineButtonText="I decline"
+          cookieName="myAwesomeCookieName2"
+          style={{ background: "#2B373B" }}
+          buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+          expires={150}
+        >
+          This website uses cookies to enhance the user experience.
+        </CookieConsent>
         <Footer />
       </div>
     </ThemeProvider>

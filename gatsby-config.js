@@ -51,6 +51,14 @@ module.exports = {
         icon: `src/images/molamak-favicon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+
+      options: {
+        trackingId: `G-10FKWT1WSW`,
+        head: true,
+      },
+    },
     `gatsby-plugin-styled-components`,
 
     `gatsby-plugin-offline`,
