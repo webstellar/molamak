@@ -25,10 +25,13 @@ export const MoCard = styled(Card)(({ theme }) => ({
 }))
 
 export const MoSmallTypography = styled(Typography)({
-  marginBottom: "2rem",
-  marginLeft: "4rem",
+  textAlign: "Right",
 })
 
+export const MoSmallerTypography = styled(Typography)({
+  marginBottom: "2rem",
+  textAlign: "Right",
+})
 
 export const MoTypography = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {

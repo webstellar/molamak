@@ -38,6 +38,7 @@ export const useAboutQuery = () => {
             teamName
             teamShortDescription
             teamUrl
+            teamRole
             teamPicture {
               localFile {
                 childImageSharp {

@@ -4,6 +4,7 @@ import {
   MoCard,
   MoTypography,
   MoSmallTypography,
+  MoSmallerTypography,
 } from "./OurTeam.styles"
 import { Typography, CardContent, Grid } from "@mui/material"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -48,16 +49,32 @@ const OurTeam = ({ ourTeam }) => {
                 >
                   {team.teamName}
                 </MoSmallTypography>
-                <Typography variant="body2" color="grey.50">
+                <MoSmallerTypography
+                  sx={{
+                    fontWeight: "200",
+                    fontStyle: "Italics",
+                    fontSize: "12px",
+                  }}
+                  color="grey.50"
+                  gutterBottom
+                >
+                  {team.teamRole}
+                </MoSmallerTypography>
+                <Typography
+                  variant="body2"
+                  color="grey.50"
+                  sx={{ textAlign: "justify-stretch" }}
+                >
                   {team.teamShortDescription.substring(0, 100)}
                   <Link
                     to={team.teamUrl}
                     style={{
                       cursor: "pointer",
-                      color: "#fff",
+                      color: "#f5a52e",
                       textDecoration: "none",
                     }}
                   >
+                    {" "}
                     ...
                   </Link>
                 </Typography>
